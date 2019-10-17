@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel = "stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="{{url_for('static', filename='style.css') }}" rel="stylesheet">
+</head>
+
+<body>
+    <div class = "uppersquare">
+        <br>
+        <h2 style="color: white">
+            Popular Solutions
+        </h2>
+        <br>
+        <div class='row'>
+            {% for i in range(0, 5) %}
+                {% include 'cards.html' %}
+            {% endfor%}
+        </div>
+        <br>
+    </div>
+    <div class = "bottomsquare">
+        <br>
+        <h2>
+            Discover New Solutions
+        </h2>
+        <br>
+        <div class='row'>
+            {% for i in range(0, 10) %}
+            {% include 'cards.html'%}
+            {% endfor%}
+        </div>
+        <br>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+/* Ipad, tablet*/
+@media (min-width : 767px) {
+    div.uppersquare {
+        max-height: 400px;
+    }
+    div.row{
+        max-height: 265px;
+    }
+    div.bottomsquare{
+        z-index:1;
+        position:relative 
+    }
+}
+
+/* phone */
+@media (max-width : 767px){
+    div.uppersquare {
+        max-height: 10%;
+    }
+}
+
+/* PC */
+h2{
+    margin-left: 1%
+}
+
+div.card{
+    width: 17rem; 
+    margin-left: 1%; 
+    margin-bottom: 4%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+div.row{
+    margin-left: 1%
+}
+
+div.uppersquare{
+    background-image: linear-gradient(to right, #1E90FF, #00BFFF)
+}
+
+img{
+    width: 20%; 
+    margin-left: 5%; 
+    margin-right: 1%
+}
+
+h6{
+    margin-left: 30%; 
+    margin-top: -10%; 
+    color: gray; 
+    font-weight: 350;
+}
+
+div.bottomsquare{
+    background-color: white;
+}
