@@ -9,11 +9,28 @@ import requests
 developer = os.getenv("DEVELOPER", "Me")
 environment=os.getenv("ENVIRONMENT","development")
 #todas las peliculas
-#peliculas = requests.get('https://api.themoviedb.org/3/discover/movie?api_key=0f90dc240d06fa41a1a68cbc6abd44af&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1')
-#peliculas_json = peliculas.json()
+peliculas = requests.get('https://api.themoviedb.org/3/discover/movie?api_key=0f90dc240d06fa41a1a68cbc6abd44af&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1')
+peliculas_json = peliculas.json()
 #print(peliculas_json)
+
+#muestra todos los elementos que quiero de las peliculas
+for pelis in peliculas_json['results']:
+
+    titulos_pelis = (pelis['title'])
+    votos_pelis = str((pelis['vote_count']))
+    release_pelis =str((pelis['release_date']))
+    print(titulos_pelis+ " \ncantidad de votos: =>" + votos_pelis+ "\n fecha de lanzamiento :" +release_pelis)
+ 
+    
+
+
 joker_movie = requests.get("https://api.themoviedb.org/3/movie/475557?api_key=0f90dc240d06fa41a1a68cbc6abd44af")
 joker_movie_json=joker_movie.json()
+
+
+shawshank_movie = requests.get("https://api.themoviedb.org/3/movie/278?api_key=0f90dc240d06fa41a1a68cbc6abd44af&language=en-US")
+shawshank_movie_json = shawshank_movie.json()
+
 
 
 with open('joker_movie_details.json' , 'r') as myfile:
@@ -21,9 +38,9 @@ with open('joker_movie_details.json' , 'r') as myfile:
 
 #parsear file
 obj = json.loads(data)
+joker_title = (str(obj['original_title']))
 
-print("Original title: " + str(obj['original_title']))
-print("Overview: " + str(obj['overview']))
+
 
 
 
@@ -31,8 +48,16 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     
-    return render_template('layout.html')
-if __name__ == '__main__':
-    app.run(debug=True)
+    return render_template('layout.html'  , titulos_pelis=titulos_pelis)
+#if __name__ == '__main__':
+  #  app.run(debug=True)
+
+
+class Movies():
+    def top_movies(self):
+        return 'aqui van las top movies'
+    def all_movies(self):
+        return 'aqui van las que van abajo'
+
 
 
