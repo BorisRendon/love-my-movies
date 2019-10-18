@@ -20,8 +20,11 @@ for pelis in peliculas_json['results']:
     votos_pelis = str((pelis['vote_count']))
     release_pelis =str((pelis['release_date']))
     print(titulos_pelis+ " \ncantidad de votos: =>" + votos_pelis+ "\n fecha de lanzamiento :" +release_pelis)
+
+    y=(len(pelis))
  
-    
+
+print(y)
 
 
 joker_movie = requests.get("https://api.themoviedb.org/3/movie/475557?api_key=0f90dc240d06fa41a1a68cbc6abd44af")
@@ -48,9 +51,9 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     
-    return render_template('layout.html'  , titulos_pelis=titulos_pelis)
-#if __name__ == '__main__':
-  #  app.run(debug=True)
+    return render_template('layout.html'  , y=y)
+if __name__ == '__main__':
+    app.run(debug=True)
 
 
 class Movies():
