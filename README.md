@@ -103,7 +103,7 @@ Which gave me [trending_movies.json](trending_movies.json)
 
 # Not Extras, but required (MUST)
 
-- [ ] Use Flask as backend (for now)
+- [ x] Use Flask as backend (for now)
 - [ ] Use Redis as the counter DB (incr/decr vote_count)
 - [ ] Use Redis to store any details or additional info for the movies (JSON respond)
 - [ ] Use Redis as a cache.
