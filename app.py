@@ -3,8 +3,19 @@ from flask import Flask, jsonify , render_template, request
 import os, optparse,sys
 import json
 import requests
+from tmdbv3api import TMDb
+from tmdbv3api import Movie
 
 #api_key = 0f90dc240d06fa41a1a68cbc6abd44af
+
+tmdb = TMDb()
+tmdb.api_key = '0f90dc240d06fa41a1a68cbc6abd44af'
+
+movie = Movie()
+popular_pelis = movie.popular()
+for p in popular_pelis:
+    print(p.title)
+    #print(p.overview)
 
 developer = os.getenv("DEVELOPER", "Me")
 environment=os.getenv("ENVIRONMENT","development")
@@ -48,19 +59,19 @@ joker_title = (str(obj['original_title']))
 
 
 app = Flask(__name__)
-@app.route('/')
-def index():
+#@app.route('/')
+#def index():
     
-    return render_template('layout.html'  , y=y,titulos_pelis=titulos_pelis)
-if __name__ == '__main__':
-    app.run(debug=True)
+ #   return render_template('layout.html'  , y=y,titulos_pelis=titulos_pelis,peliculas_json=peliculas_json)
+#if __name__ == '__main__':
+ #   app.run(debug=True)
 
 
-class Movies():
-    def top_movies(self):
-        return 'aqui van las top movies'
-    def all_movies(self):
-        return 'aqui van las que van abajo'
+#class Movies():
+ #   def top_movies(self):
+  #      return 'aqui van las top movies'
+   # def all_movies(self):
+    #    return 'aqui van las que van abajo'
 
 
 
