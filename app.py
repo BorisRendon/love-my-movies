@@ -13,9 +13,6 @@ import redis
 
 app = Flask(__name__)
 
-
-
-
 tmdb = TMDb()
 tmdb.api_key = '0f90dc240d06fa41a1a68cbc6abd44af'
 
@@ -42,23 +39,28 @@ joker_popularity = str(jok.popularity)
 #-----------------------------------------
 
 #avengers
-avengers = movie.search('Avengers: Infinity War')
+avengers = movie.search('Avengers: Endgame')
+lista_avengers = []
 for av in avengers:
     avengers_titulo = av.title
     avengers_release_date = str(av.release_date)
     avengers_popularity = str(av.popularity)
-   
-    
-    #avengers_votos = str(av.vote_count)
-    #avengers_overview = av.overview
+
+    lista_avengers.append(avengers_titulo)
+    lista_avengers.append(avengers_release_date)
+    lista_avengers.append(popularity)
 
 #dora
 dora = movie.search('Dora and the Lost City of Gold')
+lista_dora = []
 for dor in dora:
     dora_title = dor.title
     dora_release_date = str(dor.release_date)
     dora_popularity = str(dor.popularity)
-    
+
+    lista_dora.append(dora_title)
+    lista_dora.append(dora_release_date)
+    lista_dora.append(dora_popularity)
     
     #dora_votos = (dor.vote_count)
     #dora_overview = dor.overview
@@ -80,25 +82,29 @@ pulp_popularity = str(pulp_fiction.popularity)
 
  
 
-
+#lista del joker
 lista_joker = []
 lista_joker.append(joker_title)
 lista_joker.append(joker_release_date)
 lista_joker.append(joker_popularity)
 print(lista_joker)
 
-
-
-
-
-joker_movie = requests.get("https://api.themoviedb.org/3/movie/475557?api_key=0f90dc240d06fa41a1a68cbc6abd44af")
-joker_movie_json=joker_movie.json()
-
-
-shawshank_movie = requests.get("https://api.themoviedb.org/3/movie/278?api_key=0f90dc240d06fa41a1a68cbc6abd44af&language=en-US")
-shawshank_movie_json = shawshank_movie.json()
-
-
+#lista avengers
+print(lista_avengers)
+#lista dora
+print(lista_dora)
+#lista deadpool
+lista_deadpool=[]
+lista_deadpool.append(deadpool_title)
+lista_deadpool.append(deadpool_release_date)
+lista_deadpool.append(deadpool_popularity)
+print(lista_deadpool)
+#lista pulp
+lista_pulp = []
+lista_pulp.append(pulp_title)
+lista_pulp.append(pulp_release_date)
+lista_pulp.append(pulp_popularity)
+print(lista_pulp)
 
 @app.route('/')
 def index():
@@ -108,15 +114,6 @@ def index():
 if __name__ == '__main__':
   app.run(debug=True)
 
-
-
-
-
-#class Movies():
- #   def top_movies(self):
-  #      return 'aqui van las top movies'
-   # def all_movies(self):
-    #    return 'aqui van las que van abajo'
-
-
+def titulos_pelis():
+    return render_template('cards.html',lista_joker=lista_joker)
 
