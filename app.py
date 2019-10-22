@@ -5,6 +5,7 @@ import json
 import requests
 from tmdbv3api import TMDb
 from tmdbv3api import Movie
+import redis 
 
 
 #titulo, release date, popularidad , link a mas información
@@ -27,22 +28,9 @@ for p in popular_pelis:
     titulos = str(p.title)
     release_date = str(p.release_date)
     popularity = str(p.popularity)
-    #overview = str(p.overview)
-    
-    #votos= str(p.vote_count)
-
-
-    titulos_lista = titulos.split("\n")
-    #overview_lista = overview.split("\n")
-    release_date_lista = release_date.split("\n")
-    #votos_lista = votos.split("n")
-
+   
     w = (len(titulos))
-    #print(titulos + ":\n=>" + overview + "\n" + "Fecha de lanzamiento: " + release_date + "\n Total de votos: "+ votos)
-
-#print("Titulo : " + titulos_lista[0] +"\nOverview: "+ overview_lista[0]+"\nFecha de lanzamiento: " + release_date_lista[0]+"\nVotos: " + votos_lista[0])
-
-
+    
 #top 5 movies
 #joker---------------------------
 jok = movie.details(475557)
@@ -93,28 +81,14 @@ pulp_popularity = str(pulp_fiction.popularity)
  
 
 
+lista_joker = []
+lista_joker.append(joker_title)
+lista_joker.append(joker_release_date)
+lista_joker.append(joker_popularity)
+print(lista_joker)
 
 
 
-
-
-#todas las peliculas
-#peliculas = requests.get('https://api.themoviedb.org/3/discover/movie?api_key=0f90dc240d06fa41a1a68cbc6abd44af&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1')
-#peliculas_json = peliculas.json()
-#print(peliculas_json)
-
-#muestra todos los elementos que quiero de las peliculas
-#for pelis in peliculas_json['results']:
-
-#    titulos_pelis = (pelis['title'])
- #   votos_pelis = str((pelis['vote_count']))
-  #  release_pelis =str((pelis['release_date']))
-    #print(titulos_pelis+ " \ncantidad de votos: =>" + votos_pelis+ "\n fecha de lanzamiento :" +release_pelis)
-
-   # y=(len(pelis))
- 
-
-#print(y)
 
 
 joker_movie = requests.get("https://api.themoviedb.org/3/movie/475557?api_key=0f90dc240d06fa41a1a68cbc6abd44af")
@@ -130,9 +104,9 @@ shawshank_movie_json = shawshank_movie.json()
 def index():
 
     
-    return render_template('layout.html'  , w=w,titulos=titulos,popular_pelis = popular_pelis )
+    return render_template('layout.html'  , w=w,lista_joker=lista_joker)
 if __name__ == '__main__':
-   app.run(debug=True)
+  app.run(debug=True)
 
 
 

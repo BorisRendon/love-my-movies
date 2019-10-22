@@ -1,8 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic);
-
-
-
-
+/* Ipad, tablet*/
 @media (min-width : 767px) {
     div.uppersquare {
         max-height: 400px;
@@ -11,18 +7,19 @@
         max-height: 265px;
     }
     div.bottomsquare{
-        z-index: 1;
+        z-index:1;
         position:relative 
     }
 }
 
-
+/* phone */
 @media (max-width : 767px){
     div.uppersquare {
         max-height: 10%;
     }
 }
 
+/* PC */
 h2{
     margin-left: 1%
 }
@@ -39,7 +36,7 @@ div.row{
 }
 
 div.uppersquare{
-    background-image: linear-gradient(to right, #1E90FF, rgb(255, 187, 0))
+    background-image: linear-gradient(to right, #1E90FF, #00BFFF)
 }
 
 img{
