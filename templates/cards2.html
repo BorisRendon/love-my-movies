@@ -1,23 +1,25 @@
   
 <div class = "card">
         <h5 class = "card-title" style = "margin-top: 5%">
-                
+            {{lista_populares_titulos[f]}}    
            
             
         </h5>
         <div class = "card-body">
             <p class = "card-text" style = "color:gray">
                 Fecha de estreno:
+                {{lista_populares_release_date[f]}}
                
             </p>
             <!--- Set Green and gray btns or not -->
             {% if f % 1 == 0 %}
             <center>
                 <h4>
-                    
+                    Punteo:
+                {{lista_populares_popularity[f]}}
                 </h4>
             </center>
-            <a class = "btn btn-success" style = "color:white"> no me saleeeeeee :(  </a>
+            <a class = "btn btn-success" style = "color:white"> Vote up!  </a>
             {% endif %}
            
     

@@ -124,7 +124,7 @@ print(lista_trending_movies)
 def index():
 
     
-    return render_template('layout.html'  , w=w,lista_peliculas=lista_peliculas,lista_trending_movies = lista_trending_movies,lista_populares_titulos=lista_populares_titulos)
+    return render_template('layout.html'  , w=w,lista_peliculas=lista_peliculas,lista_populares_titulos=lista_populares_titulos,lista_populares_release_date=lista_populares_release_date,lista_populares_popularity=lista_populares_popularity)
 if __name__ == '__main__':
   app.run(debug=True)
 
