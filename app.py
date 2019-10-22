@@ -21,13 +21,23 @@ popular_pelis = movie.popular()
 
 
 #resultado de todas las peliculas famosas, son 14
+lista_populares_titulos = []
+lista_populares_release_date=[]
+lista_populares_popularity=[]
 for p in popular_pelis:
     titulos = str(p.title)
     release_date = str(p.release_date)
     popularity = str(p.popularity)
+    lista_populares_titulos.append(titulos)
+    lista_populares_release_date.append(release_date)
+    lista_populares_popularity.append(popularity)
+    
    
     w = (len(titulos))
-    
+
+
+print(w)
+
 #top 5 movies
 #joker---------------------------
 jok = movie.details(475557)
@@ -87,33 +97,37 @@ lista_joker = []
 lista_joker.append(joker_title)
 lista_joker.append(joker_release_date)
 lista_joker.append(joker_popularity)
-print(lista_joker)
+
 
 #lista avengers
-print(lista_avengers)
+
 #lista dora
-print(lista_dora)
+
 #lista deadpool
 lista_deadpool=[]
 lista_deadpool.append(deadpool_title)
 lista_deadpool.append(deadpool_release_date)
 lista_deadpool.append(deadpool_popularity)
-print(lista_deadpool)
+
 #lista pulp
 lista_pulp = []
 lista_pulp.append(pulp_title)
 lista_pulp.append(pulp_release_date)
 lista_pulp.append(pulp_popularity)
-print(lista_pulp)
+
+
+lista_peliculas = [lista_joker, lista_avengers, lista_dora, lista_deadpool, lista_pulp]
+lista_trending_movies = [lista_populares_titulos, lista_populares_release_date , lista_populares_popularity]
+print(lista_trending_movies)
 
 @app.route('/')
 def index():
 
     
-    return render_template('layout.html'  , w=w,lista_joker=lista_joker)
+    return render_template('layout.html'  , w=w,lista_peliculas=lista_peliculas,lista_trending_movies = lista_trending_movies,lista_populares_titulos=lista_populares_titulos)
 if __name__ == '__main__':
   app.run(debug=True)
 
-def titulos_pelis():
-    return render_template('cards.html',lista_joker=lista_joker)
+#def titulos_pelis():
+   # return render_template('cards.html',lista_joker=lista_joker)
 

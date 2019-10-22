@@ -11,15 +11,11 @@
     <div class = "uppersquare">
         <br>
         <h2 style="color: black">
-            Top 5 rated movies
+            Fav movies
         </h2>
         <br>
         <div class='row'>
             {% for i in range(0, 5) %}
-                
-                
-            
-            
                 {% include 'cards.html' %}
             {% endfor%}
         </div>
@@ -32,14 +28,11 @@
         </h2>
         <br>
 
-        te quedaste probando poner los titulos de manera interativa
+        
         <div class='row'>
-            {% for i in range(0, w) %}
-            
-
-            
-            
-            {% include 'cards.html'%}            
+            {% for f in range(0,w) %}
+        
+            {% include 'cards2.html' %}                        
             {% endfor%}
         </div>
         <br>
