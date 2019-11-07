@@ -1,0 +1,5 @@
+link del repo
+https://github.com/BorisRendon/love-my-movies
+
+git tag
+https://github.com/BorisRendon/love-my-movies/releases/tag/v1.0

@@ -1,12 +1,15 @@
 /* Ipad, tablet*/
 @media (min-width : 767px) {
     div.uppersquare {
-        max-height: 400px;
+        margin-top: 4%;
+        max-height: 500px;
     }
     div.row{
+        margin-top: 4%;
         max-height: 265px;
     }
     div.bottomsquare{
+        margin-top: 4%;
         z-index:1;
         position:relative 
     }
@@ -15,12 +18,13 @@
 /* phone */
 @media (max-width : 767px){
     div.uppersquare {
-        max-height: 10%;
+        max-height: 20%;
     }
 }
 
 /* PC */
 h2{
+    margin-top: 4%;
     margin-left: 1%
 }
 
@@ -29,14 +33,21 @@ div.card{
     margin-left: 1%; 
     margin-bottom: 4%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 4%;
+    
 }
 
 div.row{
+    margin-top: 4%;
     margin-left: 1%
 }
 
 div.uppersquare{
+    margin: 4%;
+    margin-top: 5%;
     background-image: linear-gradient(to right, #1E90FF, #00BFFF)
+    
+    
 }
 
 img{
