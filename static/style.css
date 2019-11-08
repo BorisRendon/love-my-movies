@@ -29,22 +29,29 @@ h2{
 }
 
 div.card{
-    width: 17rem; 
-    margin-left: 1%; 
+    width: 17rem;
+    margin-left: .5%; 
     margin-bottom: 4%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin-top: 4%;
+    
     
 }
 
 div.row{
     margin-top: 4%;
     margin-left: 1%
+    
+    
 }
 
 div.uppersquare{
-    margin: 4%;
+    margin: 5%;
     margin-top: 5%;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    height: 950px;
+    
     background-image: linear-gradient(to right, #1E90FF, #00BFFF)
     
     

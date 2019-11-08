@@ -19,7 +19,26 @@
                 </h4>
             </center>
             <a class = "btn btn-success" style = "color:white"> Vote up! </a>
+            <script> var count =0; 
+            var countEl = document.getElementById("count");
+            function plus (){
+                count++
+                countEl.value=count;
+
+
+
+
+            }function minus(){
+                count --;
+                countEl.value=count;
+
+            }</script>
             {% endif %}
+            <div id="input_div">
+                <input type="text" size="25" value="0" id="count">
+                <input type="button" value="-" id="moins" onclick="minus()">
+                <input type="button" value="+" id="plus" onclick="plus()">
+            </div>
            
     
         </div>

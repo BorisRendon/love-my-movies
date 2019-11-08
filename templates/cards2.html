@@ -21,11 +21,17 @@
             <center>
                 <h4>
                     Punteo:
-                {{lista_populares_popularity[f]}}
+                    
+                        
+                        {{lista_populares_popularity[f]}}
+                        
+                {% endif %}
+                
+                    
                 </h4>
-            </center>
-            <a class = "btn btn-success" style = "color:white"> Vote up!  </a>
-            {% endif %}
+            </center>{% include 'count.html' %} 
+            
+            
            
     
         </div>

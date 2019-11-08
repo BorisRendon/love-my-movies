@@ -5,7 +5,7 @@ import json
 import requests
 from tmdbv3api import TMDb
 from tmdbv3api import Movie
-
+import redis
 
 #titulo, release date, popularidad , link a mas información
 
@@ -18,6 +18,10 @@ tmdb.api_key = '0f90dc240d06fa41a1a68cbc6abd44af'
 movie = Movie()
 popular_pelis = movie.popular()
 
+#redis
+#r = redis.Redis(host='localhost', port=6379, db=0)
+#r.set('foo','bar')
+#r.get('foo')
 
 ##prueba
 recomended_pelis = movie.recommendations(movie_id=111)

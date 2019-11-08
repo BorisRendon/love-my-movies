@@ -2,13 +2,14 @@
 <html>
 
 <head>
+        <title>Love my movies</title>
     <link rel = "stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href="{{url_for('static', filename='style.css') }}" rel="stylesheet">
 </head>
 
 <body>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <div class = "uppersquare">
+    <div class = "uppersquare" >
         <br>
         
         <h6>Developed by: Boris Rendón </h6>
@@ -34,8 +35,10 @@
         
         <div class='row'>
             {% for f in range(0,w) %}
+            
         
-            {% include 'cards2.html' %}                        
+            {% include 'cards2.html' %}
+                                    
             {% endfor%}
         </div>
         <br>
